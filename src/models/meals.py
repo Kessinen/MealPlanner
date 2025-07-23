@@ -27,6 +27,14 @@ class Meal(BaseModel):
         default=1.0,
         description="Factor to adjust the frequency of the meal.",
     )
+    active_time: int | None = Field(
+        default=None,
+        description="Preparation (active) time in minutes.",
+    )
+    passive_time: int | None = Field(
+        default=None,
+        description="Cooking (passive) time in minutes.",
+    )
     has_side_dish: bool = Field(
         default=True,
         description="Whether the meal has a side dish.",

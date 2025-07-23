@@ -3,10 +3,13 @@ from models.meals import MealHistory, Meal, SideDish
 
 
 def system_prompt(
-    meal_history: MealHistory, all_foods: list[Meal], side_dishes: list[SideDish]
+    meal_history: MealHistory,
+    all_foods: list[Meal],
+    side_dishes: list[SideDish],
+    days: int = 7,
 ) -> str:
     return f"""
-**Role**: You are an intelligent meal planning assistant. Your task is to generate a 7-day dinner plan based on the user's meal history.
+**Role**: You are an intelligent meal planning assistant. Your task is to generate a {days}-day dinner plan based on the user's meal history.
 
 **Current Date Reference:** {date.today().isoformat()}
 

@@ -1,0 +1,366 @@
+{
+    "history": [
+        {
+            "date_eaten": "2025-06-26",
+            "meal": "Lasagnette",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-06-27",
+            "meal": "Grilliruokaa",
+            "side_dish": "Peruna"
+        },
+        {
+            "date_eaten": "2025-06-28",
+            "meal": "Pastasalaatti",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-06-29",
+            "meal": "McDonalds",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-06-30",
+            "meal": "Jauhelihakastike",
+            "side_dish": "Spagetti"
+        },
+        {
+            "date_eaten": "2025-07-02",
+            "meal": "Lasagnette",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-07-03",
+            "meal": "Kanasalaatti",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-07-06",
+            "meal": "Maksalaatikko",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-07-20",
+            "meal": "Munakastike",
+            "side_dish": "Peruna"
+        },
+        {
+            "date_eaten": "2025-07-21",
+            "meal": "Lasagnette",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-07-22",
+            "meal": "Riisikanaa",
+            "side_dish": null
+        },
+        {
+            "date_eaten": "2025-07-23",
+            "meal": "Porsaansuikalekastike",
+            "side_dish": "Peruna"
+        }
+    ],
+    "all_foods": [
+        {
+            "name": "Grilliruokaa",
+            "meal_type": [
+                "meat",
+                "chicken",
+                "fish",
+                "vegetable"
+            ],
+            "notes": "Summer only.",
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Hernekeitto",
+            "meal_type": [
+                "meat",
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Jauhelihakastike",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Jauhelihakeitto",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Kanakeitto",
+            "meal_type": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Kanakastike",
+            "meal_type": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Kanakintut",
+            "meal_type": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Kanapasta",
+            "meal_type": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Kanasalaatti",
+            "meal_type": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Kanaa",
+            "meal_type": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Kasvispihvit",
+            "meal_type": [
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Kasvissosekeitto",
+            "meal_type": [
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Kinkkukiusaus",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Lasagnette",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Lihapullat/pihvit",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Makaronilaatikko",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Makaronimössö",
+            "meal_type": [
+                "meat",
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Maksalaatikko",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "McDonalds",
+            "meal_type": [
+                "meat",
+                "chicken",
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Munakastike",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Naudan/porsaan uuniliha",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Nakkikeitto",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Pastasalaatti",
+            "meal_type": [
+                "meat",
+                "vegetable",
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Pinaattiletut",
+            "meal_type": [
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Porsaansuikalekastike",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Risotto",
+            "meal_type": [
+                "meat",
+                "vegetable",
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Tortillat",
+            "meal_type": [
+                "meat",
+                "chicken",
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": false
+        },
+        {
+            "name": "Uunilohi",
+            "meal_type": [
+                "fish"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        },
+        {
+            "name": "Uunimakkara",
+            "meal_type": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 1,
+            "has_side_dish": true
+        }
+    ],
+    "side_dishes": [
+        {
+            "name": "spagetti",
+            "notes": null
+        },
+        {
+            "name": "riisi",
+            "notes": "rice"
+        },
+        {
+            "name": "perunaa",
+            "notes": "potatoe"
+        },
+        {
+            "name": "muusi",
+            "notes": "smashed potatoes"
+        },
+        {
+            "name": "wokkivihannekset",
+            "notes": "wok vegetables"
+        },
+        {
+            "name": "ranskalaiset",
+            "notes": "frenchfries"
+        }
+    ]
+}

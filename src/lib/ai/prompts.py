@@ -2,7 +2,7 @@ from datetime import date
 from models.meals import MealHistory, Meal, SideDish
 
 
-def system_prompt(
+def get_system_prompt(
     meal_history: MealHistory,
     all_foods: list[Meal],
     side_dishes: list[SideDish],

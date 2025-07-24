@@ -16,7 +16,7 @@ class Settings(BaseSettings):
 
     # Database settings
     DB_HOST: str = Field(getenv("DB_HOST", "127.0.0.1"), env="DB_HOST")
-    DB_PORT: int = Field(getenv("DB_PORT", 5422), env="DB_PORT")
+    DB_PORT: int = Field(getenv("DB_PORT", 5432), env="DB_PORT")
     DB_USER: str = Field(getenv("DB_USER", "user"), env="DB_USER")
     DB_PASSWORD: str = Field(getenv("DB_PASSWORD", "password"), env="DB_PASSWORD")
     DB_NAME: str = Field(getenv("DB_NAME", "meal_planner"), env="DB_NAME")

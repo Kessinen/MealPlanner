@@ -2,22 +2,23 @@
 
 This module provides a context manager for managing database connections and a function to test the connection.
 """
+
 from contextlib import contextmanager
 
 import psycopg
 from psycopg.rows import dict_row
 
 from settings import settings
-from lib.logger import logger
+from lib import logger
 
 
 @contextmanager
 def get_connection():
     """Context manager for database connections.
-    
+
     Yields:
         psycopg.Cursor: A database cursor with dict_row factory.
-        
+
     The connection is automatically committed on successful execution and rolled back on error.
     The cursor and connection are automatically closed when the context exits.
     """
@@ -46,7 +47,7 @@ def get_connection():
 
 def test_connection() -> bool:
     """Test the database connection.
-    
+
     Returns:
         bool: True if the connection test was successful, False otherwise.
     """

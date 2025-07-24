@@ -4,7 +4,7 @@ from typing import Optional, List
 
 from models.meals import MealHistory, MealHistoryItem
 from ..core.connection import get_connection
-from lib.logger import logger
+from lib import logger
 
 
 class MealHistoryRepository:

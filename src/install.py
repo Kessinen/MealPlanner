@@ -7,7 +7,7 @@ import gzip
 
 from db.setup import initialize_database, seed_database
 from db.repositories import MealRepository, SideDishRepository
-from lib.logger import logger
+from lib import logger
 from settings import settings
 
 

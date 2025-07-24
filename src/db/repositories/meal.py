@@ -1,20 +1,21 @@
 """Repository for meal-related database operations."""
+
 from typing import Optional, List
 
 from models.meals import Meal
 from ..core.connection import get_connection
-from lib.logger import logger
+from lib import logger
 
 
 class MealRepository:
     """Repository class for handling Meal database operations."""
-    
+
     def __init__(self):
         self._connection = get_connection
 
     def get_all_meals(self) -> Optional[List[Meal]]:
         """Retrieve all meals from the database.
-        
+
         Returns:
             Optional[List[Meal]]: List of Meal objects if successful, None otherwise.
         """
@@ -37,10 +38,10 @@ class MealRepository:
 
     def get_meal_by_id(self, meal_id: int) -> Optional[Meal]:
         """Retrieve a single meal by its ID.
-        
+
         Args:
             meal_id: The ID of the meal to retrieve.
-            
+
         Returns:
             Optional[Meal]: The Meal object if found, None otherwise.
         """

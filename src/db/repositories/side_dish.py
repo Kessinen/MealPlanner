@@ -1,20 +1,21 @@
 """Repository for side dish-related database operations."""
+
 from typing import Optional, List
 
 from models.meals import SideDish
 from ..core.connection import get_connection
-from lib.logger import logger
+from lib import logger
 
 
 class SideDishRepository:
     """Repository class for handling SideDish database operations."""
-    
+
     def __init__(self):
         self._connection = get_connection
 
     def get_all_side_dishes(self) -> Optional[List[SideDish]]:
         """Retrieve all side dishes from the database.
-        
+
         Returns:
             Optional[List[SideDish]]: List of SideDish objects if successful, None otherwise.
         """

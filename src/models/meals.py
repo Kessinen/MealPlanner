@@ -43,6 +43,7 @@ class Meal(BaseModel):
 
 
 class SideDish(BaseModel):
+    id: int | None = Field(default=None, description="Database ID of the side dish.")
     name: str = Field(
         description="Name of the side dish.", examples=["Peruna", "Riisi", "Pasta"]
     )

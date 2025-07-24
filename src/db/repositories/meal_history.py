@@ -1,7 +1,11 @@
 """Repository for meal history-related database operations."""
 
+from fastapi import HTTPException
+
 from models.meals import MealHistory, MealHistoryItem
 from ..core.connection import get_connection
+from .meal import MealRepository
+from .side_dish import SideDishRepository
 from lib import logger
 
 
@@ -11,6 +15,8 @@ class MealHistoryRepository:
     def __init__(self):
         logger.debug("Initializing MealHistoryRepository")
         self._connection = get_connection
+        self._meal_repo = MealRepository()
+        self._side_dish_repo = SideDishRepository()
 
     def get_all_meal_history(self) -> MealHistory | None:
         """Retrieve all meal history records from the database.
@@ -81,3 +87,56 @@ class MealHistoryRepository:
                 f"Unexpected error in get_all_meal_history: {e}", exc_info=True
             )
             return None
+
+    def add_meal_history(self, meal_history: MealHistoryItem):
+        """Add a new meal history item to the database.
+
+        Args:
+            meal_history: The meal history item to add, containing meal and side dish names.
+
+        Raises:
+            HTTPException: If the meal is not found or there's a database error.
+        """
+        try:
+            # Look up meal by name if we don't have an ID
+            if not hasattr(meal_history.meal, "id"):
+                meal = self._meal_repo.get_meal_by_name(meal_history.meal)
+                if not meal:
+                    raise HTTPException(
+                        status_code=404, detail=f"Meal not found: {meal_history.meal}"
+                    )
+                meal_id = meal.id
+            else:
+                meal_id = meal_history.meal.id
+
+            # Look up side dish by name if provided and we don't have an ID
+            side_dish_id = None
+            if meal_history.side_dish:
+                if not hasattr(meal_history.side_dish, "id"):
+                    side_dish = self._side_dish_repo.get_side_dish_by_name(
+                        meal_history.side_dish
+                    )
+                    if side_dish:
+                        side_dish_id = side_dish.id
+                else:
+                    side_dish_id = meal_history.side_dish.id
+
+            with self._connection() as conn:
+                conn.execute(
+                    """
+                    INSERT INTO meal_history (date_eaten, meal_id, side_dish_id)
+                    VALUES (%s, %s, %s)
+                    """,
+                    (
+                        meal_history.date_eaten,
+                        meal_id,
+                        side_dish_id,
+                    ),
+                )
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error(f"Error adding meal history: {e}")
+            raise HTTPException(
+                status_code=500, detail=f"Failed to add meal history: {str(e)}"
+            )

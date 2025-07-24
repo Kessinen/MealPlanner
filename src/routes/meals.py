@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
-from models.meals import Meal, SideDish, MealHistory
+from models.meals import Meal, MealHistoryItem, SideDish, MealHistory
 from db.repositories.meal import MealRepository
 from db.repositories.side_dish import SideDishRepository
 from db.repositories.meal_history import MealHistoryRepository
@@ -51,6 +51,28 @@ async def get_meal_history():
         logger.error(f"Error fetching meal history: {e}")
         # Return empty meal history on error to maintain consistent response format
         return MealHistory(history=[])
+
+
+@meal_router.post("/meal_history", response_model=MealHistoryItem)
+async def add_meal_history(meal_history: MealHistoryItem):
+    """Add a new meal history item to the database."""
+    try:
+        # TODO: Validate meal and side dish exist in the database
+
+        meal = meal_repo.get_meal_by_name(meal_history.meal)
+        if meal is None:
+            raise HTTPException(status_code=404, detail="Meal not found")
+
+        if meal_history.side_dish is not None:
+            side_dish = side_dish_repo.get_side_dish_by_name(meal_history.side_dish)
+            if side_dish is None:
+                raise HTTPException(status_code=404, detail="Side dish not found")
+
+        meal_history_repo.add_meal_history(meal_history)
+        return meal_history
+    except Exception as e:
+        logger.error(f"Error adding meal history: {e}")
+        raise HTTPException(status_code=500, detail="Failed to add meal history")
 
 
 @meal_router.get("/{meal_id}", response_model=Meal)

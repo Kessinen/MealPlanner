@@ -12,7 +12,7 @@ class MealType(Enum):
 
 class Meal(BaseModel):
     name: str = Field(description="Name of the meal.")
-    meal_type: list[MealType] = Field(
+    meal_types: list[MealType] = Field(
         examples=[
             [MealType.MEAT],
             [MealType.CHICKEN],

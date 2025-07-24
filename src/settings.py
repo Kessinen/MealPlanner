@@ -1,11 +1,11 @@
 from pydantic_settings import BaseSettings
 from pydantic import Field
-from dotenv import load_dotenv
 from pathlib import Path
+from dotenv import load_dotenv
+from os import getenv
 
 load_dotenv()
 
-from os import getenv
 
 print(
     getenv("DB_USER"),
@@ -20,7 +20,8 @@ class Settings(BaseSettings):
     # Application settings
     APP_HOST: str = Field("127.0.0.1", env="APP_HOST")
     APP_PORT: int = Field(8000, env="APP_PORT")
-    LOG_DIR: Path = Field(Path("data") / "logs", env="LOG_DIR")
+    DATA_DIR: Path = Field(Path(__file__).parent / "data", env="DATA_DIR")
+    LOG_DIR: Path = Field(Path(__file__).parent / "data" / "logs", env="LOG_DIR")
 
     # Database settings
     DB_HOST: str = Field(getenv("DB_HOST", "127.0.0.1"), env="DB_HOST")
@@ -48,3 +49,9 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+if not settings.DATA_DIR.exists():
+    settings.DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+if not settings.LOG_DIR.exists():
+    settings.LOG_DIR.mkdir(parents=True, exist_ok=True)

@@ -64,276 +64,369 @@
     "all_foods": [
         {
             "name": "Grilliruokaa",
-            "meal_type": [
+            "meal_types": [
                 "meat",
                 "chicken",
                 "fish",
                 "vegetable"
             ],
             "notes": "Summer only.",
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
             "name": "Hernekeitto",
-            "meal_type": [
+            "meal_types": [
                 "meat",
                 "vegetable"
             ],
-            "notes": null,
-            "frequency_factor": 1,
+            "notes": "Emppu does not eat.",
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Jauhelihakastike",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
             "name": "Jauhelihakeitto",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
-            "name": "Kanakeitto",
-            "meal_type": [
-                "chicken"
+            "name": "Kalapuikot",
+            "meal_types": [
+                "fish"
             ],
-            "notes": null,
-            "frequency_factor": 1,
-            "has_side_dish": false
-        },
-        {
-            "name": "Kanakastike",
-            "meal_type": [
-                "chicken"
-            ],
-            "notes": null,
-            "frequency_factor": 1,
+            "notes": "Goes great with french fries.",
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
-            "name": "Kanakintut",
-            "meal_type": [
+            "name": "Kanakastike",
+            "meal_types": [
                 "chicken"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": true
+        },
+        {
+            "name": "Kanakeitto",
+            "meal_types": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": false
+        },
+        {
+            "name": "Kanakintut",
+            "meal_types": [
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": true
+        },
+        {
+            "name": "Kanansuikale",
+            "meal_types": [
+                "chicken"
+            ],
+            "notes": "Always with rice.",
+            "frequency_factor": 0.5,
+            "active_time": 30,
+            "passive_time": 0,
             "has_side_dish": true
         },
         {
             "name": "Kanapasta",
-            "meal_type": [
+            "meal_types": [
                 "chicken"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Kanasalaatti",
-            "meal_type": [
+            "meal_types": [
                 "chicken"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
-            "name": "Kanaa",
-            "meal_type": [
-                "chicken"
-            ],
-            "notes": null,
-            "frequency_factor": 1,
-            "has_side_dish": true
-        },
-        {
             "name": "Kasvispihvit",
-            "meal_type": [
+            "meal_types": [
                 "vegetable"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
             "name": "Kasvissosekeitto",
-            "meal_type": [
+            "meal_types": [
                 "vegetable"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Kinkkukiusaus",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Lasagnette",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Lihapullat/pihvit",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": true
+        },
+        {
+            "name": "Lohi medaljongit",
+            "meal_types": [
+                "fish"
+            ],
+            "notes": "Expensive. Max once a month.",
+            "frequency_factor": 0.3,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
             "name": "Makaronilaatikko",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Makaronimössö",
-            "meal_type": [
+            "meal_types": [
                 "meat",
                 "vegetable"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Maksalaatikko",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": 5,
             "has_side_dish": false
         },
         {
             "name": "McDonalds",
-            "meal_type": [
+            "meal_types": [
                 "meat",
                 "chicken",
                 "vegetable"
             ],
-            "notes": null,
-            "frequency_factor": 1,
+            "notes": "Rarely eaten. Max once in 2-3 months.",
+            "frequency_factor": 0.2,
+            "active_time": 0,
+            "passive_time": 0,
             "has_side_dish": false
         },
         {
             "name": "Munakastike",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
-            "has_side_dish": true
-        },
-        {
-            "name": "Naudan/porsaan uuniliha",
-            "meal_type": [
-                "meat"
-            ],
-            "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
             "name": "Nakkikeitto",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
-            "name": "Pastasalaatti",
-            "meal_type": [
-                "meat",
-                "vegetable",
-                "chicken"
-            ],
-            "notes": null,
-            "frequency_factor": 1,
-            "has_side_dish": false
-        },
-        {
-            "name": "Pinaattiletut",
-            "meal_type": [
-                "vegetable"
-            ],
-            "notes": null,
-            "frequency_factor": 1,
-            "has_side_dish": true
-        },
-        {
-            "name": "Porsaansuikalekastike",
-            "meal_type": [
+            "name": "Naudan/porsaan uuniliha",
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
-            "name": "Risotto",
-            "meal_type": [
-                "meat",
-                "vegetable",
-                "chicken"
-            ],
-            "notes": null,
-            "frequency_factor": 1,
-            "has_side_dish": false
-        },
-        {
-            "name": "Tortillat",
-            "meal_type": [
+            "name": "Pakastepizza",
+            "meal_types": [
                 "meat",
                 "chicken",
                 "vegetable"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.6,
+            "active_time": 5,
+            "passive_time": 20,
+            "has_side_dish": false
+        },
+        {
+            "name": "Pastasalaatti",
+            "meal_types": [
+                "meat",
+                "vegetable",
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": false
+        },
+        {
+            "name": "Pinaattiletut",
+            "meal_types": [
+                "vegetable"
+            ],
+            "notes": "Only for Esa",
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": true
+        },
+        {
+            "name": "Porsaansuikalekastike",
+            "meal_types": [
+                "meat"
+            ],
+            "notes": null,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": true
+        },
+        {
+            "name": "Risotto",
+            "meal_types": [
+                "meat",
+                "vegetable",
+                "chicken"
+            ],
+            "notes": null,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
+            "has_side_dish": false
+        },
+        {
+            "name": "Tortillat",
+            "meal_types": [
+                "meat",
+                "chicken",
+                "vegetable"
+            ],
+            "notes": null,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": false
         },
         {
             "name": "Uunilohi",
-            "meal_type": [
+            "meal_types": [
                 "fish"
             ],
-            "notes": null,
-            "frequency_factor": 1,
+            "notes": "Expensive. Max once a month.",
+            "frequency_factor": 0.3,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         },
         {
             "name": "Uunimakkara",
-            "meal_type": [
+            "meal_types": [
                 "meat"
             ],
             "notes": null,
-            "frequency_factor": 1,
+            "frequency_factor": 0.5,
+            "active_time": null,
+            "passive_time": null,
             "has_side_dish": true
         }
     ],

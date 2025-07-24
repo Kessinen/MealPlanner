@@ -1,3 +1,8 @@
+-- Drop in reverse order of dependencies
+DROP VIEW IF EXISTS current_meal_plan_view;
+DROP FUNCTION IF EXISTS clean_expired_meal_plans() CASCADE;
+DROP TABLE IF EXISTS temp_meal_plan CASCADE;
+
 CREATE TABLE temp_meal_plan (
     id SERIAL PRIMARY KEY,
     planned_date DATE NOT NULL,
@@ -31,7 +36,7 @@ WHERE
     tmp.expires_at > CURRENT_TIMESTAMP;
 
 -- Automatic cleanup procedure
-CREATE OR REPLACE FUNCTION clean_expired_meal_plans()
+CREATE FUNCTION clean_expired_meal_plans()
 RETURNS VOID AS $$
 BEGIN
     DELETE FROM temp_meal_plan 

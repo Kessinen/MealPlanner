@@ -1,3 +1,8 @@
+-- Drop in reverse order of dependencies
+DROP TRIGGER IF EXISTS update_side_dish_timestamp ON side_dishes;
+DROP FUNCTION IF EXISTS update_timestamp() CASCADE;
+DROP TABLE IF EXISTS side_dishes CASCADE;
+
 -- Create side_dishes table
 CREATE TABLE side_dishes (
     id SERIAL PRIMARY KEY,
@@ -8,7 +13,7 @@ CREATE TABLE side_dishes (
 );
 
 -- Add automatic timestamp update function
-CREATE OR REPLACE FUNCTION update_timestamp()
+CREATE FUNCTION update_timestamp()
 RETURNS TRIGGER AS $$
 BEGIN
     NEW.updated_at = NOW();

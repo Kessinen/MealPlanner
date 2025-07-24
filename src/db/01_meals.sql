@@ -1,3 +1,8 @@
+DROP TYPE IF EXISTS meal_type CASCADE;
+DROP TABLE IF EXISTS meals CASCADE;
+DROP TRIGGER IF EXISTS update_meal_timestamp ON meals CASCADE;
+DROP FUNCTION IF EXISTS update_timestamp CASCADE;
+
 -- Create the meal type enum (simple DB-level validation)
 CREATE TYPE meal_type AS ENUM ('meat', 'chicken', 'fish', 'vegetable');
 
@@ -16,7 +21,7 @@ CREATE TABLE meals (
 );
 
 -- Automatic timestamp function (the one useful addition)
-CREATE OR REPLACE FUNCTION update_timestamp()
+CREATE FUNCTION update_timestamp()
 RETURNS TRIGGER AS $$
 BEGIN
     NEW.updated_at = NOW();
@@ -28,3 +33,4 @@ CREATE TRIGGER update_meal_timestamp
 BEFORE UPDATE ON meals
 FOR EACH ROW
 EXECUTE FUNCTION update_timestamp();
+

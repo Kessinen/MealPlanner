@@ -1,3 +1,7 @@
+-- Drop in reverse order of dependencies
+DROP VIEW IF EXISTS meal_history_view;
+DROP TABLE IF EXISTS meal_history CASCADE;
+
 -- Simplified meal_history table without timestamps
 CREATE TABLE meal_history (
     id SERIAL PRIMARY KEY,

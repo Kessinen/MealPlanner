@@ -9,7 +9,7 @@ CREATE TYPE meal_type AS ENUM ('meat', 'chicken', 'fish', 'vegetable');
 -- Core table with just what we need
 CREATE TABLE meals (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL UNIQUE,
     meal_types meal_type[] NOT NULL,
     notes TEXT,
     frequency_factor FLOAT DEFAULT 1.0,

@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS side_dishes CASCADE;
 -- Create side_dishes table
 CREATE TABLE side_dishes (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL UNIQUE,
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

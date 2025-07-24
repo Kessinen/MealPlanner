@@ -11,6 +11,7 @@ class MealType(Enum):
 
 
 class Meal(BaseModel):
+    id: int = Field(description="ID of the meal.")
     name: str = Field(description="Name of the meal.")
     meal_types: list[MealType] = Field(
         examples=[

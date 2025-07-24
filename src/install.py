@@ -5,7 +5,8 @@ from pathlib import Path
 import gzip
 
 
-from db.db import init_db
+from db.setup import initialize_database, seed_database
+from db.repositories import MealRepository, SideDishRepository
 from lib.logger import logger
 from settings import settings
 
@@ -19,8 +20,6 @@ def _backup_db(minimize: bool = False, gz: bool = True):
     if gz:
         backup_file = backup_file.with_suffix(".json.gz")
     logger.info("Backing up database...")
-    from db.db import MealRepository, SideDishRepository
-
     meal_repo = MealRepository()
     side_dish_repo = SideDishRepository()
     backup_data["meals"] = [
@@ -42,7 +41,8 @@ def _backup_db(minimize: bool = False, gz: bool = True):
 def install():
     _backup_db()
     logger.info("Installing database...")
-    init_db()
+    initialize_database()
+    seed_database()
 
 
 if __name__ == "__main__":

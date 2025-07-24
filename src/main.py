@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from routes.meals import meal_router
 from lib.logger import logger
-from db.db import test_connection
+from db import test_connection
 
 
 @asynccontextmanager

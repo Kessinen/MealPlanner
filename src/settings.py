@@ -7,15 +7,6 @@ from os import getenv
 load_dotenv()
 
 
-print(
-    getenv("DB_USER"),
-    getenv("DB_PASSWORD"),
-    getenv("DB_NAME"),
-    getenv("DB_HOST"),
-    getenv("DB_PORT"),
-)
-
-
 class Settings(BaseSettings):
     # Application settings
     APP_HOST: str = Field("127.0.0.1", env="APP_HOST")

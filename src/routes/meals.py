@@ -1,12 +1,12 @@
 from fastapi import APIRouter, HTTPException
 
-from models.meals import Meal, SideDish, MealHistoryItem, MealHistory
+from models.meals import Meal, SideDish, MealHistory
 from db.repositories.meal import MealRepository
 from db.repositories.side_dish import SideDishRepository
 from db.repositories.meal_history import MealHistoryRepository
 from lib import logger
 
-meal_router = APIRouter(prefix="/meals")
+meal_router = APIRouter(prefix="/meals", tags=["meals"])
 
 # Initialize repositories
 meal_repo = MealRepository()

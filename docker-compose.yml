@@ -3,11 +3,11 @@ services:
     image: postgres:17-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: meal_planner_db
+      - POSTGRES_USER=${DB_USER-user}
+      - POSTGRES_PASSWORD=${DB_PASSWORD-password}
+      - POSTGRES_DB=${DB_NAME-meal_planner}
     ports:
-      - "5432:5432"
+      - "${DB_PORT-5432}:5432"
     volumes:
       - ./data/postgres:/var/lib/postgresql/data/
 

@@ -1,24 +1,78 @@
 # Git
 .git
 .gitignore
+.gitattributes
+.gitmodules
 
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+*.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Environments
 .env
 .venv
 env/
 venv/
+ENV/
 
-# IDEs
+# Virtual environments
+venv.bak/
+venv-pypy/
+
+# IDEs and editors
 .idea/
 .vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Local development
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
 
 # Docker
 Dockerfile
 docker-compose.yml
+docker-compose.*.yml
+.dockerignore
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Project specific
+media/
+static/

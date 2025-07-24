@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
 
-from routes.meals import meal_router
+from routes import meal_router, log_router
 from lib import logger
 from db import test_connection
 
@@ -20,6 +20,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 app.include_router(meal_router)
+app.include_router(log_router)
 
 
 @app.get("/")

@@ -1,5 +1,3 @@
-
-
 from db.setup import initialize_database, seed_database
 from lib.backup import create_backup
 from lib import logger
@@ -14,8 +12,12 @@ def _backup_db(minimize: bool = False, gz: bool = True):
 def install():
     _backup_db()
     logger.info("Installing database...")
-    initialize_database()
-    seed_database()
+    if not initialize_database():
+        logger.error("Database initialization failed")
+        return
+    if not seed_database():
+        logger.error("Database seeding failed")
+        return
 
 
 if __name__ == "__main__":

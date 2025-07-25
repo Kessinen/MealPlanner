@@ -55,3 +55,23 @@ class SideDishRepository:
         except Exception as e:
             logger.error(f"Error fetching side dish with name {side_dish_name}: {e}")
             return None
+
+    def add_side_dish(self, side_dish: SideDish):
+        try:
+            with self._connection() as conn:
+                conn.execute(
+                    """
+                    INSERT INTO side_dishes (
+                        id, name, notes
+                    )
+                    VALUES (%s, %s, %s)
+                    """,
+                    (
+                        side_dish.id,
+                        side_dish.name,
+                        side_dish.notes,
+                    ),
+                )
+        except Exception as e:
+            logger.error(f"Error adding side dish: {e}")
+            raise

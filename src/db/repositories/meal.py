@@ -91,3 +91,28 @@ class MealRepository:
         except Exception as e:
             logger.error(f"Error fetching meal with name {meal_name}: {e}")
             return None
+
+    def add_meal(self, meal: Meal):
+        try:
+            with self._connection() as conn:
+                conn.execute(
+                    """
+                    INSERT INTO meals (
+                        id, name, meal_types, notes, frequency_factor, active_time, passive_time, has_side_dish
+                    )
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    """,
+                    (
+                        meal.id,
+                        meal.name,
+                        ",".join(meal.meal_types),
+                        meal.notes,
+                        meal.frequency_factor,
+                        meal.active_time,
+                        meal.passive_time,
+                        meal.has_side_dish,
+                    ),
+                )
+        except Exception as e:
+            logger.error(f"Error adding meal: {e}")
+            raise

@@ -1,41 +1,14 @@
-import json
-from datetime import datetime
-from zoneinfo import ZoneInfo
-from pathlib import Path
-import gzip
 
 
 from db.setup import initialize_database, seed_database
-from db.repositories import MealRepository, SideDishRepository
+from lib.backup import create_backup
 from lib import logger
-from settings import settings
 
 
 def _backup_db(minimize: bool = False, gz: bool = True):
-    backup_data: dict = {}
-    backup_file = Path(
-        settings.DATA_DIR
-        / f"{datetime.now(ZoneInfo('UTC')).strftime('%Y-%m-%d_%H-%M-%SZ')}-backup_data.json"
-    )
-    if gz:
-        backup_file = backup_file.with_suffix(".json.gz")
-    logger.info("Backing up database...")
-    meal_repo = MealRepository()
-    side_dish_repo = SideDishRepository()
-    backup_data["meals"] = [
-        meal.model_dump(mode="json") for meal in meal_repo.get_all_meals()
-    ]
-    backup_data["side_dishes"] = [
-        side_dish.model_dump(mode="json")
-        for side_dish in side_dish_repo.get_all_side_dishes()
-    ]
-
-    with gzip.open(backup_file, "wb") if gz else open(backup_file, "w") as f:
-        f.write(
-            json.dumps(
-                backup_data, indent=2 if not minimize else None, ensure_ascii=False
-            ).encode("utf-8")
-        )
+    """Create a backup before installation."""
+    backup_path = create_backup(minimize=minimize, gz=gz)
+    logger.info(f"Database backed up to: {backup_path}")
 
 
 def install():
